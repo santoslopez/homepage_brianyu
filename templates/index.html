@@ -182,8 +182,7 @@
             <p>
                 I've done a lot of work on The Crimson's design team to build tools that 
                 help create graphics for the paper's stories. Among these projects include
-                <a href="http://brianyuweb.com/quotecard/">a quote card generator</a>,
-                and <a href="https://github.com/brianyu28/byd3">a line and bar graph generator</a>.
+                a quote card generator, and a line and bar graph generator.
             </p>
             <p>
                 You can find the source for some of the infographics that I designed for The Crimson's
@@ -191,7 +190,7 @@
             </p>
             <h2>Extemp Timer</h2>
             <p>
-                The <a href="http://brianyuweb.com/extemp/">Extemp Timer</a> is meant for
+                The Extemp Timer is meant for
                 extemporaneous speaking competitions, and can be used by extemp prep room
                 proctors to manage when speakers should be drawing their questions and leaving
                 for round. I was an extemporanous speaking competitor in high school, and since
@@ -303,32 +302,32 @@ var mediumBubbleData = [
 var smallBubbleData = [
     {
         'title': 'email',
-        'img': 'http://brianyuweb.com/img/contact-email.png',
+        'img': "{{ url_for('static', filename='img/contact-email.png') }}",
         'link': 'mailto:brianyu28@gmail.com'
     },
     {
         'title': 'linkedin',
-        'img': 'http://brianyuweb.com/img/contact-linkedin.png',
+        'img': "{{ url_for('static', filename='img/contact-linkedin.png') }}",
         'link': 'https://www.linkedin.com/in/brian-yu/'
     },
     {
         'title': 'github',
-        'img': 'http://brianyuweb.com/img/contact-github.png',
+        'img': "{{ url_for('static', filename='img/contact-github.png') }}",
         'link': 'https://github.com/brianyu28'
     },
     {
         'title': 'facebook',
-        'img': 'http://brianyuweb.com/img/contact-facebook.png',
+        'img': "{{ url_for('static', filename='img/contact-facebook.png') }}",
         'link': 'https://www.facebook.com/BrianYu28'
     },
     {
         'title': 'crimson',
-        'img': 'http://brianyuweb.com/img/contact-crimson.png',
+        'img': "{{ url_for('static', filename='img/contact-crimson.png') }}",
         'link': 'http://www.thecrimson.com/writer/1212675/Brian_P._Yu/'
     },
     {
         'title': 'twitter',
-        'img': 'http://brianyuweb.com/img/contact-twitter.png',
+        'img': "{{ url_for('static', filename='img/contact-twitter.png') }}",
         'link': 'https://twitter.com/brianyu28/'
     }
 ];
@@ -374,7 +373,7 @@ function generateBubbles() {
     // creates central image at a random location
     var loc = randomOutside();
     mainBubble = svg.append('image')
-        .attr('xlink:href', 'http://brianyuweb.com/img/profile.png')
+        .attr('xlink:href', "{{ url_for('static', filename='img/profile.png') }}")
         .attr('x', loc[0])
         .attr('y', loc[1])
         .attr('width', mainBubbleSize)
