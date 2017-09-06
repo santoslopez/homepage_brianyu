@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brian Yu</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lato', sans-serif;
+        }
+        p, div {
+            font-size: 18px;
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents">
+    </div>
+    <div class="container">
+        <div id="about" style="display:none;" class="row section">
+            <h1>About Me</h1>
+            <p>
+                Hi!
+                I'm Brian, a junior at Harvard College living in
+                <a href="https://winthrop.harvard.edu">Winthrop House</a>,
+                studying computer science and linguistics.
+                I'm the head course assistant for <a href="https://cs50.harvard.edu">CS50</a>,
+                Harvard's introductory course in computer science,
+                and I'm the digital strategist at <a href="http://thecrimson.com">The Crimson</a>,
+                Harvard College's student newspaper. I've also previously
+                worked for <a href="http://www.3pspeech.com/">3P Speech</a>
+                and the
+                <a href="https://www.speechanddebate.org/">National Speech and Debate Association</a>.
+                I'm interested in public speaking, education, technology, and language.
+            </p>
+
+            <h2>Contact Me</h2>
+            <p>
+                <ul>
+                    <li>
+                        For general communication, contact
+                        <a href="mailto:brianyu28@gmail.com">brianyu28@gmail.com</a>
+                        or
+                        <a href="mailto:brianyu@college.harvard.edu">brianyu@college.harvard.edu</a>
+                    </li>
+                    <li>
+                        For CS50-related communication, contact
+                        <a href="mailto:brian@cs50.harvard.com">brian@cs50.harvard.edu</a>
+                    </li>
+                    <li>
+                        For Crimson-related communication, contact
+                        <a href="mailto:brian.yu@thecrimson.com">brian.yu@thecrimson.com</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div id="resume" style="display:none;" class="row section">
+            <h1>Resume</h1>
+            <a href="{{ url_for('static', filename='Brian_Yu_Resume.pdf') }}" target="_blank">Click here to download.</a>
+            <hr/>
+            <h2>Education</h2>
+            <p>
+                <b>Harvard College - Cambridge, MA - Class of 2019</b> (8/2015 - Present)
+            </p>
+            <ul>
+                <li>Concentrator in Computer Science and Linguistics</li>
+                <li>GPA (as of May 2017): 4.00</li>
+                <li>2016 John Harvard Scholar</li>
+                <li>2016 Detur Prize Recipient</li>
+            </ul>
+            <p>
+                <b>Monte Vista High School - Danville, CA - Class of 2015</b> (8/2011 - 6/2015)
+            </p>
+            <ul>
+                <li>Weighted GPA: 4.47, Unweighted GPA: 4.00</li>
+                <li>2015 National Champion in U.S. Extemporaneous Speaking</li>
+                <li>2013-2015 State Champion in U.S. Extemp Speaking</li>
+                <li>U.S. Presidential Scholar Semifinalist, National Merit Scholar Finalist</li>
+            </ul>
+            <hr/>
+            <h2>Experience</h2>
+            <p>
+                <b>Computer Science 50 (CS50) - Harvard University - Cambridge, MA</b> (6/2016 - Present)
+            </p>
+            <p>
+                <i>Head Course Assistant. Teaching Fellow. Software Engineer.</i>
+            </p>
+            <ul>
+                <li>Taught sections, held office hours, ran problem set walkthroughs for Harvard College's introductory CS course</li>
+                <li>Built CS50's gradebook and GitHub-based problem set submission system</li>
+                <li>Worked on CS50's AP initiative to developed a high school curriculum for AP CS Principles students</li>
+                <li>Developed web tools including a portal for AP teachers and a searchable quiz bank</li>
+                <li>Taught web development to students at Harvard Summer School</li>
+            </ul>
+            <p>
+                <b>The Harvard Crimson - Cambridge, MA</b> (9/2015 - Present)
+            </p>
+            <p>
+                <i>Digital Strategist. Designer. News Writer.</i>
+            </p>
+            <ul>
+                <li>Led The Crimson's data journalism team</li>
+                <li>Wrote software to facilitate analysis of big-data stories</li>
+                <li>Analyzed The Crimson's readership statistics and online traffic data, proposed new outreach initiatives</li>
+                <li>Designed graphics and layouts for print and online editions of the newspaper</li>
+            </ul>
+            <p>
+                <b>Computer Science 51 (CS51) - Harvard University - Cambridge, MA</b> (1/2017 - Present)
+            </p>
+            <p><i>Teaching Fellow.</i></p>
+            <ul>
+                <li>Taught sections, held office hours on functional programming, abstraction and design</li>
+            </ul>
+            <p><b>National Speech and Debate Association</b>(8/2015 - Present)</p>
+            <p><i>Membership and Development Intern</i></p>
+            <ul>
+                <li>Assisted in developing the National Speech and Debate Association's website</li>
+                <li>Worked on providing resources for schools and students that participate in speech and debate</li>
+            </ul>
+            <p><b>3P Speech, LLC</b> (8/2015 - 8/2016)</p>
+            <p><i>Public Speaking Coach</i></p>
+            <ul>
+                <li>Taught public speaking, research, speech writing, and presentation skills</li>
+            </ul>
+            <p><b>Monte Vista Speech and Debate Institute - Danville, CA</b> (6/2012 - 8/2015)</p>
+            <p><i>Public Speaking Instructor</i></p>
+            <ul>
+                <li>Taught public speaking, research, speech writing, and presentation skills</li>
+                <li>Organized five local speech competitions each year</li>
+            </ul>
+            <hr/>
+            <h2>Projects</h2>
+            <p><b>Science Alliance Network</b> (12/2015 - Present)</p>
+            <p><i>Primary Developer. Executive Board Member.</i></p>
+            <ul>
+                <li>Designated a website to connect students interested in conducting science research with older mentors</li>
+                <li>Used by more than 150 elementary and high school students in 2016</li>
+            </ul>
+            <hr/>
+            <h2>Technical Skills</h2>
+            <p><b>Languages</b></p>
+            <ul>
+                <li>Python, JavaScript, C, SQL, HTML, CSS, OCaml, PHP, Java</li>
+            </ul>
+            <p><b>Frameworks and Libraries</b></p>
+            <ul>
+                <li>Flask, Django, jQuery, Bootstrap, MongoDB</li>
+            </ul>
+            <p><b>Tools</b></p>
+            <ul>
+                <li>Git, InDesign, Photoshop, Illustrator, LaTeX, Markdown</li>
+            </ul>
+        </div>
+        <div id="projects" style="display:none;" class="row section">
+            <h1>Projects</h1>
+            <p>
+                I've worked on a number of projects for 
+                <a href="https://cs50.harvard.edu">CS50</a>
+                and for <a href="http://thecrimson.com">The Crimson</a>,
+                and you can find some of the open source projects I've worked
+                on through my <a href="https://github.com/brianyu28">GitHub profile</a>.
+            </p>
+            <p>
+                I've listed some of my projects below:
+            </p>
+            <h2>Science Alliance Network</h2>
+            <p>
+                <a href="http://sciencealliancenetwork.org">Science Alliance Network</a>
+                connects students interested in doing research with older mentors, allowing
+                them to collaborate on experiments. The service also helps teachers and
+                administrators to organize science fairs, track progress on science experiments,
+                and ensure the safety of each project.
+            </p>
+            <h2>Crimson Graphics Generators</h2>
+            <p>
+                I've done a lot of work on The Crimson's design team to build tools that 
+                help create graphics for the paper's stories. Among these projects include
+                <a href="http://brianyuweb.com/quotecard/">a quote card generator</a>,
+                and <a href="https://github.com/brianyu28/byd3">a line and bar graph generator</a>.
+            </p>
+            <p>
+                You can find the source for some of the infographics that I designed for The Crimson's
+                2017 commencement <a href="https://github.com/brianyu28/infographics-crimcom17">here.</a>
+            </p>
+            <h2>Extemp Timer</h2>
+            <p>
+                The <a href="http://brianyuweb.com/extemp/">Extemp Timer</a> is meant for
+                extemporaneous speaking competitions, and can be used by extemp prep room
+                proctors to manage when speakers should be drawing their questions and leaving
+                for round. I was an extemporanous speaking competitor in high school, and since
+                graduating have found myself running numerous extemp prep rooms: this tool
+                was designed to make the job easier. 
+            </p>
+        </div>
+        <div id="courses" style="display:none;" class="row section">
+            <h1>Courses</h1>
+            <h2>Courses I've Taught</h2>
+            <p>
+                Spring 2017:
+                <ul>
+                    <li>Computer Science 51: Abstraction and Design in Computation (Teaching Fellow, Harvard College)</li>
+                    <li>Computer Science E-50: Intensive Introduction to Computer Science (Course Assistant, Harvard Extension School)</li>
+                </ul>
+                Fall 2016:
+                <ul>
+                    <li>Computer Science 50: Introduction to Computer Science I (Teaching Fellow, Harvard College)</li>
+                </ul>
+                Summer 2016:
+                <ul>
+                    <li>CSCI P-14300: Introduction to Web Programming (Teaching Fellow, Harvard Summer School)</li>
+                </ul>
+
+            </p> 
+            <h2>Courses I've Taken</h2>
+            <p>
+                Spring 2017:
+                <ul>
+                    <li>Computer Science 124: Data Structures and Algorithms</li>
+                    <li>Linguistics 101: The Science of Language</li>
+                    <li>Math 21b: Linear Algebra and Differential Equations</li>
+                    <li>Science of the Physical Universe 22: The Unity of Science</li>
+                </ul>
+                Fall 2016:
+                <ul>
+                    <li>Computer Science 61: Systems Programming and Machine Organization</li>
+                    <li>Computer Science 121: Introduction to the Theory of Computation</li>
+                    <li>Math 21a: Multivariable Calculus</li>
+                    <li>Culture and Belief 45: History of the English Language</li>
+                </ul>
+                Spring 2016:
+                <ul>
+                    <li>Computer Science 51: Abstraction and Design in Computation</li>
+                    <li>Computer Science 20: Discrete Math for Computer Science</li>
+                    <li>Empirical and Mathematical Reasoning 11: Language, Logic, and Interpretation</li>
+                    <li>Latin Ab: Beginning Latin</li>
+                </ul>
+                Fall 2015:
+                <ul>
+                    <li>Computer Science 50: Introduction to Computer Science I</li>
+                    <li>Economics 10a: Principles of Economics</li>
+                    <li>Latin Aa: Beginning Latin</li>
+                    <li>Expository Writing 20 - 220: Humans, Nature, and the Environment</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+
+window.onload = function() {
+    render();
+}
+
+var screenWidth;
+var screenHeight;
+var svg;
+
+var mainBubble;
+var mediumBubbles = [];
+var smallBubbles = [];
+var selectedIndex = -1;
+var inMove = false;
+
+
+var onHomeScreen = false;
+
+// data for large links
+var mediumBubbleData = [
+    {
+        'title': 'About',
+        'external': 0,
+        'toggle': '#about',
+        'color': '#42aaf4',
+    },
+    {
+        'title': 'Resume',
+        'external': 0,
+        'toggle': '#resume',
+        'color': '#cc971e'
+    },
+    {
+        'title': 'Projects',
+        'external': 0,
+        'toggle': '#projects',
+        'color': '#178c2b'
+    },
+    {
+        'title': 'Courses',
+        'external': 0,
+        'toggle': '#courses',
+        'color': '#c13b32'
+    }
+];
+
+// small links to appear below big circle
+var smallBubbleData = [
+    {
+        'title': 'email',
+        'img': 'http://brianyuweb.com/img/contact-email.png',
+        'link': 'mailto:brianyu28@gmail.com'
+    },
+    {
+        'title': 'linkedin',
+        'img': 'http://brianyuweb.com/img/contact-linkedin.png',
+        'link': 'https://www.linkedin.com/in/brian-yu/'
+    },
+    {
+        'title': 'github',
+        'img': 'http://brianyuweb.com/img/contact-github.png',
+        'link': 'https://github.com/brianyu28'
+    },
+    {
+        'title': 'facebook',
+        'img': 'http://brianyuweb.com/img/contact-facebook.png',
+        'link': 'https://www.facebook.com/BrianYu28'
+    },
+    {
+        'title': 'crimson',
+        'img': 'http://brianyuweb.com/img/contact-crimson.png',
+        'link': 'http://www.thecrimson.com/writer/1212675/Brian_P._Yu/'
+    },
+    {
+        'title': 'twitter',
+        'img': 'http://brianyuweb.com/img/contact-twitter.png',
+        'link': 'https://twitter.com/brianyu28/'
+    }
+];
+
+// starting point
+function render() {
+
+    // compute screen size and define canvas
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
+    var canvas = d3.select('#contents')
+        .style('width', screenWidth);
+    svg = canvas.append('svg')
+        .attr('width', px(screenWidth))
+        .attr('height', px(screenHeight));
+   
+    // create all sized bubbles
+    generateBubbles();
+
+    // wait briefly before entering home screen
+    svg.transition().delay(100).on('end', homeScreen);
+};
+
+
+// generates a random point outside the bounds of the screen
+function randomOutside() {
+    var outsideX = Math.random() > 0.5; // away from x or y axis
+    var direction = Math.random() > 0.5; // away from positive or negative end
+    var distance = Math.floor((Math.random() * 100) + 100) + mainBubbleSize;
+    var startLoc = Math.floor(Math.random() * (screenWidth + 100)) - 50;
+    if (outsideX && direction)
+        return [startLoc, -distance];
+    else if (outsideX)
+        return [startLoc, screenHeight + distance];
+    else if (direction)
+        return [screenWidth + distance, startLoc];
+    else
+        return [-distance, startLoc];
+};
+
+function generateBubbles() {
+    
+    // creates central image at a random location
+    var loc = randomOutside();
+    mainBubble = svg.append('image')
+        .attr('xlink:href', 'http://brianyuweb.com/img/profile.png')
+        .attr('x', loc[0])
+        .attr('y', loc[1])
+        .attr('width', mainBubbleSize)
+        .attr('height', mainBubbleSize)
+        .on('click', homeScreen);
+    
+    // creates each of the medium bubbles (without text) at a random location
+    for (var i = 0; i < mediumBubbleData.length; i++) {
+        var loc = randomOutside();
+        var bubble = svg.append('circle')
+            .attr('cx', loc[0])
+            .attr('cy', loc[1])
+            .attr('r', (mediumBubbleSize / 2))
+            .attr('bubbleIndex', i)
+            .attr('class', 'mediumBubble')
+            .attr('external', mediumBubbleData[i]['external'])
+            .attr('toggle', mediumBubbleData[i]['toggle'])
+            .style('fill', mediumBubbleData[i]['color']);
+
+        // add to our list of bubbles of this size
+        mediumBubbles.push(bubble);
+
+        // when clicked, either link somewhere else, or display page contents 
+        bubble.on('click', function() {
+            if (d3.select(this).attr('external') == 1)
+                window.open(d3.select(this).attr('toggle'), '_blank');
+            else {
+                bubbleClicked(
+                        d3.select(this).attr('bubbleIndex'),
+                        d3.select(this).attr('toggle'));
+            }
+        });
+    }
+    
+    // create the small bubbles at random locations
+    for (var i = 0; i < smallBubbleData.length; i++) {
+        var loc = randomOutside();
+        var img = svg.append('image')
+            .attr('xlink:href', smallBubbleData[i]['img'])
+            .attr('x', loc[0])
+            .attr('y', loc[1])
+            .attr('link', smallBubbleData[i]['link'])
+            .attr('class', 'smallBubble')
+            .attr('width', smallBubbleSize)
+            .attr('height', smallBubbleSize);
+        smallBubbles.push(img);
+
+        // when small bubble clicked, link to its page 
+        img.on('click', function() {
+            window.open(d3.select(this).attr('link'), '_blank');
+        });
+    }
+};
+
+// keep track of all the medium bubble labels
+var labels = [];
+function homeScreen() {
+
+    // if already on home screen, do nothing
+    if (onHomeScreen)
+        return;
+    onHomeScreen = true;
+
+    // mark that objects are in transit, so user doesn't interrupt
+    inMove = true;
+
+    // -1 is selected index for the main screen
+    selectedIndex = -1;
+
+    // hide any sections that are currently visible
+    d3.selectAll('.section').transition()
+        .delay(transitionTime)
+        .style('display', 'none');
+
+    // move all objects into their correct locations
+    mainBubble.transition()
+        .duration(transitionTime)
+        .attr('x', (screenWidth / 2) - (mainBubbleSize / 2))
+        .attr('y', (screenHeight / 2) - (mainBubbleSize / 2))
+        .attr('width', mainBubbleSize)
+        .attr('height', mainBubbleSize);
+
+    for (var i = 0; i < mediumBubbles.length; i++) {
+        var bubble = mediumBubbles[i];
+        var angle = (2 * i + 1) * (Math.PI / (2 * mediumBubbles.length + 1)) + Math.PI / 2 + (Math.PI / (4 * mediumBubbles.length + 1));
+        var transition = bubble.transition()
+            .duration(transitionTime)
+            .attr('cx', (screenWidth / 2) - Math.sin(angle) * outerRadius)
+            .attr('cy', (screenHeight / 2) + Math.cos(angle) * outerRadius)
+            .attr('r', mediumBubbleSize / 2)
+            .on('end', function() {
+                animateMediumBubble(d3.select(this));
+            });
+        
+        // if labels have yet to be generated, generate them; else, just move them into place
+        if (labels.length !== mediumBubbleData.length) {
+            var headline = svg.append('text')
+                .attr('x', (screenWidth / 2) - Math.sin(angle) * outerRadius)
+                .attr('y', (screenHeight / 2) + Math.cos(angle) * outerRadius - 5)
+                .attr('class', 'mediumBubbleText')
+                .style('font-family', lato)
+                .style('font-weight', 'bold')
+                .style('alignment-baseline', 'hanging')
+                .style('text-anchor', 'middle')
+                .style('font-size', headlineSize)
+                .style('fill', '#000000')
+                .style('pointer-events', 'none')
+                .style('opacity', 0)
+                .text(mediumBubbleData[i]['title']);
+            labels.push(headline);
+
+            headline.transition()
+                .duration(transitionTime)
+                .delay(transitionTime / 2)
+                .style('opacity', 1);
+         } else {
+            labels[i].transition()
+                .duration(transitionTime)
+                .attr('x', (screenWidth / 2) - Math.sin(angle) * outerRadius)
+                .attr('y', (screenHeight / 2) + Math.cos(angle) * outerRadius - 5)
+                .style('font-size', headlineSize)
+         }
+    }
+
+    for (var i = 0; i < smallBubbles.length; i++) {
+        var img = smallBubbles[i];
+        var angle = (2 * i + 1) * (Math.PI / (2 * smallBubbles.length + 1))
+            - Math.PI / 2 + (Math.PI / (4 * smallBubbles.length + 1));
+        var transition = img.transition()
+            .duration(transitionTime)
+            .attr('x', (screenWidth / 2) + Math.sin(angle) * innerRadius
+                    - (smallBubbleSize / 2))
+            .attr('y', (screenHeight / 2) + Math.cos(angle) * innerRadius
+                    - (smallBubbleSize / 2))
+            .on('end', function() {
+                animateSmallBubble(d3.select(this));
+            });
+    }
+    
+    // make sure svg canvas is the proper height
+    // and once everything is in place, make points grow on mouseover
+    svg.transition()
+        .duration(transitionTime)
+        .attr('height', screenHeight)
+        .on('end', animatePoints);
+    animateMainBubble();
+}
+
+// create pulsing effect for a medium bubble
+function animateMediumBubble(bubble) {
+    function animate() {
+
+         if (!onHomeScreen)
+            return;
+    
+        bubble.transition()
+            .duration(bubbleGrowTime)
+            .ease(d3.easeQuad)
+            .attr('r', (mediumBubbleSize / 2) * bubbleGrowRatio)
+            .transition()
+            .duration(bubbleGrowTime)
+            .ease(d3.easeQuad)
+            .attr('r', (mediumBubbleSize / 2))
+            .on('end', animate);
+    }
+    animate();
+}
+
+// create a pulsing effect for a small bubble
+function animateSmallBubble(bubble) {
+    function animate() {
+        bubble.transition()
+            .duration(bubbleGrowTime)
+            .ease(d3.easeQuad)
+            .attr('width', smallBubbleSize * bubbleGrowRatio)
+            .attr('height', smallBubbleSize * bubbleGrowRatio)
+            .attr('transform', 'translate(' + (- ((bubbleGrowRatio - 1) * smallBubbleSize)/2) + ', ' + (- ((bubbleGrowRatio - 1) * smallBubbleSize)/2) + ')')
+            .transition()
+            .ease(d3.easeQuad)
+            .attr('width', smallBubbleSize)
+            .attr('height', smallBubbleSize)
+            .attr('transform', '')
+            .on('end', animate);
+    }
+    animate();
+}
+
+// grow upon hover
+function animatePoints() {
+    inMove = false; // will get here at end of home screen, done being in transit
+
+    d3.selectAll('.mediumBubble').on('mouseover', function() {
+
+        // if things are moving, or if this bubble is selected, do nothing
+         if(inMove) return;
+         if(selectedIndex == d3.select(this).attr('bubbleIndex')) return;
+
+         // enlarge by a factor of its current size, where current size depends on the current screen
+         var originalSize = onHomeScreen ? (mediumBubbleSize / 2) : (mediumBubbleSmallSize / 2);
+        d3.select(this)
+            .transition()
+            .duration(hoverTime)
+            .attr('r', originalSize * bubbleGrowRatioLarge);
+         
+         // grow the label
+         if (onHomeScreen)
+             labels[d3.select(this).attr('bubbleIndex')].transition()
+                .duration(hoverTime)
+                .style('opacity', 1)
+                .style('font-size', headlineGrowSize);
+    })
+    .on('mouseout', function() {
+
+        // if things are moving, or if this bubble is selected, do nothing
+         if(inMove) return;
+         if(selectedIndex == d3.select(this).attr('bubbleIndex')) return;
+         var originalSize = onHomeScreen ? (mediumBubbleSize / 2) : (mediumBubbleSmallSize / 2);
+        d3.select(this)
+            .transition()
+            .duration(hoverTime)
+            .attr('r', originalSize)
+         .on('end', function() {
+
+             // after we've shrunk back down, start the pulsing again
+            animateMediumBubble(d3.select(this));
+         });
+        
+        // only if on the home screen, shrink the label
+         if (onHomeScreen)
+             labels[d3.select(this).attr('bubbleIndex')].transition()
+                .duration(hoverTime)
+                .style('font-size', headlineSize);
+    });
+         
+    d3.selectAll('.smallBubble').on('mouseover', function() {
+         if(inMove) return;
+        d3.select(this).transition()
+            .duration(hoverTime)
+            .attr('width', smallBubbleSize * bubbleGrowRatioLarge)
+            .attr('height', smallBubbleSize * bubbleGrowRatioLarge)
+            .attr('transform', 'translate(' + (- ((bubbleGrowRatioLarge - 1) * smallBubbleSize)/2) + ', ' + (- ((bubbleGrowRatioLarge - 1) * smallBubbleSize)/2) + ')');
+    })
+    .on('mouseout', function() {
+         if(inMove) return;
+        d3.select(this).transition()
+            .duration(hoverTime)
+            .attr('width', smallBubbleSize)
+            .attr('height', smallBubbleSize)
+            .attr('transform', '')
+            .on('end', animatePoints);
+    });
+}
+
+// when a medium bubble is clicked, need to change the page
+function bubbleClicked(index, toggle) {
+
+    // mark flags to indicate change
+    selectedIndex = index;
+    inMove = true;
+    onHomeScreen = false;
+
+    // move the large bubble 
+    mainBubble.transition()
+         .duration(transitionTime)
+         .attr('x', 2 * padding)
+         .attr('y', 2 * padding)
+         .attr('width', mainBubbleSmallSize)
+         .attr('height', mainBubbleSmallSize);
+
+    // move the key medium bubble 
+    mediumBubbles[selectedIndex].transition()
+        .duration(transitionTime)
+        .attr('cx', 3 * padding + 3 * mainBubbleSmallSize / 2)
+        .attr('cy', 2 * padding + mainBubbleSmallSize / 2)
+        .attr('r', mainBubbleSmallSize / 2);
+
+    // move the selected label
+    labels[selectedIndex].transition()
+         .duration(transitionTime)
+         .attr('x', 3 * padding + 3 * mainBubbleSmallSize / 2)
+         .attr('y', 2 * padding + mainBubbleSmallSize / 2 - 5)
+         .style('font-size', headlineSizeSmall);
+
+    // move the other medium bubbles and their labels
+    var x = 4 * padding + 2 * mainBubbleSmallSize + mediumBubbleSmallSize / 2;
+    var y = 2 * padding + mainBubbleSmallSize / 2;
+    for (var i = 0; i < mediumBubbles.length; i++) {
+        if (i == selectedIndex)
+            continue;
+        mediumBubbles[i].transition()
+            .duration(transitionTime)
+            .attr('cx', x)
+            .attr('cy', y)
+            .attr('r', mediumBubbleSmallSize / 2);
+
+        labels[i].transition()
+            .duration(transitionTime)
+            .attr('x', x)
+            .attr('y', y - 5)
+            .style('font-size', headlineSizeTiny);
+
+        x += padding + mediumBubbleSmallSize;
+    }
+    
+    // move the small bubbles
+    var left = true; // put the bubble on left or right
+    var height = padding;
+    for (var i = 0; i < smallBubbles.length; i++) {
+        var x = left ? screenWidth - 2 * padding - 2 * smallBubbleSize : 
+                screenWidth - padding - smallBubbleSize;
+        var y = height;
+        smallBubbles[i].transition()
+            .duration(transitionTime)
+            .attr('x', x)
+            .attr('y', y);
+
+        left = !left;
+        if (left)
+            height += padding + smallBubbleSize;
+    }
+
+    // actually manipulate the HTML now
+    // start by hiding all sections
+    d3.selectAll('.section').style('display', 'none');
+
+    // now make the one we want visible
+    d3.select(mediumBubbleData[index]['toggle']).style('display', 'inline');
+
+    // shrink the svg canvas area, and then mark that things are done moving
+    svg.transition()
+        .duration(transitionTime)
+        .attr('height', padding + (smallBubbleData.length / 2) * (smallBubbleSize + padding))
+        .on('end', function() { inMove = false; });
+}
+
+// let the main button grow on mouseover if another page is selected
+function animateMainBubble() {
+    mainBubble.on('mouseover', function() {
+         if (inMove) return;
+         if (selectedIndex == -1) return;
+         mainBubble.transition()
+            .duration(hoverTime)
+            .attr('x', padding)
+            .attr('y', padding)
+            .attr('width', mainBubbleSmallSize * bubbleGrowRatioMed)
+            .attr('height', mainBubbleSmallSize * bubbleGrowRatioMed);
+     })
+     .on('mouseout', function() {
+         if (inMove) return;
+         if (selectedIndex == -1) return;
+         var originalSize = onHomeScreen ? mainBubbleSize : mainBubbleSmallSize;
+         mainBubble.transition()
+            .duration(hoverTime)
+            .attr('x', 2 * padding)
+            .attr('y', 2 * padding)
+            .attr('width', mainBubbleSmallSize)
+            .attr('height', mainBubbleSmallSize);
+     });
+}
+
+// helper functions
+function px(x) {
+    return x + 'px';
+}
+
+function pxtonum(x) {
+    return parseInt(x.substring(0, x.length - 2));
+}
+
+// constants
+var padding = 10;
+var mainBubbleSize = 200;
+var mediumBubbleSize = 120;
+var smallBubbleSize = 40;
+var outerRadius = 220;
+var innerRadius = 150;
+var headlineSize = 24;
+var headlineGrowSize = 30;
+var headlineSizeSmall = 20;
+var headlineSizeTiny = 15;
+
+var mainBubbleSmallSize = 100; // when on a page 
+var mediumBubbleSmallSize = 70; // when on page, not selected
+
+var bubbleGrowRatio = 1.05;
+var bubbleGrowRatioMed = 1.15;
+var bubbleGrowRatioLarge = 1.3;
+
+var hoverTime = 200;
+var transitionTime = 1000;
+var bubbleGrowTime = 1000;
+
+ var merriweather = '"Merriweather", serif';
+ var lato = '"Lato", sans-serif';
+
+</script>
+</html>
