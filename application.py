@@ -8,8 +8,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/", subdomain="test")
-def here():
+@app.route("/sample", subdomain="test")
+def sample():
     return "test"
 
 # Custom Routing
