@@ -8,10 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/sample", subdomain="test")
-def sample():
-    return "test"
-
 # Custom Routing
 # Adapted from https://github.com/cs50/ly50
 
