@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/music50")
+def music50():
+    return render_template("music.html")
+
 # Custom Routing
 # Adapted from https://github.com/cs50/ly50
 
