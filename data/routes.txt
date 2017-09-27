@@ -1,4 +1,3 @@
 # CS50
 /feedback http://www.courseboards.com/brian
-/section https://goo.gl/forms/6tkMmC9oDrcoAO9v2
-/sorting https://github.com/brianyu28/sorting/archive/practice.zip
+/section https://goo.gl/forms/WkoUCRv1i7zJ9a0u1
