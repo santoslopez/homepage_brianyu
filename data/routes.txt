@@ -1,4 +1,3 @@
 # CS50
 /feedback http://www.courseboards.com/brian
-/section https://goo.gl/forms/WkoUCRv1i7zJ9a0u1
-/sample /static/cs50/sample.txt
+/section https://goo.gl/forms/75Lubi5hzDXUZpRg1
