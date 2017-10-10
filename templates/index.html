@@ -162,7 +162,7 @@
         <div id="projects" style="display:none;" class="row section">
             <h1>Projects</h1>
             <p>
-                I've worked on a number of projects for 
+                I've worked on a number of projects for
                 <a href="https://cs50.harvard.edu">CS50</a>
                 and for <a href="http://thecrimson.com">The Crimson</a>,
                 and you can find some of the open source projects I've worked
@@ -181,7 +181,7 @@
             </p>
             <h2>Crimson Graphics Generators</h2>
             <p>
-                I've done a lot of work on The Crimson's design team to build tools that 
+                I've done a lot of work on The Crimson's design team to build tools that
                 help create graphics for the paper's stories. Among these projects include
                 a quote card generator, and a line and bar graph generator.
             </p>
@@ -196,7 +196,7 @@
                 proctors to manage when speakers should be drawing their questions and leaving
                 for round. I was an extemporanous speaking competitor in high school, and since
                 graduating have found myself running numerous extemp prep rooms: this tool
-                was designed to make the job easier. 
+                was designed to make the job easier.
             </p>
         </div>
         <div id="courses" style="display:none;" class="row section">
@@ -225,7 +225,7 @@
                     <li>CSCI P-14300: Introduction to Web Programming (Teaching Fellow, Harvard Summer School)</li>
                 </ul>
 
-            </p> 
+            </p>
             <h2>Courses I've Taken</h2>
             <p>
                 Fall 2017:
@@ -359,7 +359,7 @@ function render() {
     svg = canvas.append('svg')
         .attr('width', px(screenWidth))
         .attr('height', px(screenHeight));
-   
+
     // create all sized bubbles
     generateBubbles();
 
@@ -385,7 +385,7 @@ function randomOutside() {
 };
 
 function generateBubbles() {
-    
+
     // creates central image at a random location
     var loc = randomOutside();
     mainBubble = svg.append('image')
@@ -395,7 +395,7 @@ function generateBubbles() {
         .attr('width', mainBubbleSize)
         .attr('height', mainBubbleSize)
         .on('click', homeScreen);
-    
+
     // creates each of the medium bubbles (without text) at a random location
     for (var i = 0; i < mediumBubbleData.length; i++) {
         var loc = randomOutside();
@@ -412,7 +412,7 @@ function generateBubbles() {
         // add to our list of bubbles of this size
         mediumBubbles.push(bubble);
 
-        // when clicked, either link somewhere else, or display page contents 
+        // when clicked, either link somewhere else, or display page contents
         bubble.on('click', function() {
             if (d3.select(this).attr('external') == 1)
                 window.open(d3.select(this).attr('toggle'), '_blank');
@@ -423,7 +423,7 @@ function generateBubbles() {
             }
         });
     }
-    
+
     // create the small bubbles at random locations
     for (var i = 0; i < smallBubbleData.length; i++) {
         var loc = randomOutside();
@@ -437,7 +437,7 @@ function generateBubbles() {
             .attr('height', smallBubbleSize);
         smallBubbles.push(img);
 
-        // when small bubble clicked, link to its page 
+        // when small bubble clicked, link to its page
         img.on('click', function() {
             window.open(d3.select(this).attr('link'), '_blank');
         });
@@ -483,7 +483,7 @@ function homeScreen() {
             .on('end', function() {
                 animateMediumBubble(d3.select(this));
             });
-        
+
         // if labels have yet to be generated, generate them; else, just move them into place
         if (labels.length !== mediumBubbleData.length) {
             var headline = svg.append('text')
@@ -528,7 +528,7 @@ function homeScreen() {
                 animateSmallBubble(d3.select(this));
             });
     }
-    
+
     // make sure svg canvas is the proper height
     // and once everything is in place, make points grow on mouseover
     svg.transition()
@@ -544,7 +544,7 @@ function animateMediumBubble(bubble) {
 
          if (!onHomeScreen)
             return;
-    
+
         bubble.transition()
             .duration(bubbleGrowTime)
             .ease(d3.easeQuad)
@@ -593,7 +593,7 @@ function animatePoints() {
             .transition()
             .duration(hoverTime)
             .attr('r', originalSize * bubbleGrowRatioLarge);
-         
+
          // grow the label
          if (onHomeScreen)
              labels[d3.select(this).attr('bubbleIndex')].transition()
@@ -616,14 +616,14 @@ function animatePoints() {
              // after we've shrunk back down, start the pulsing again
             animateMediumBubble(d3.select(this));
          });
-        
+
         // only if on the home screen, shrink the label
          if (onHomeScreen)
              labels[d3.select(this).attr('bubbleIndex')].transition()
                 .duration(hoverTime)
                 .style('font-size', headlineSize);
     });
-         
+
     d3.selectAll('.smallBubble').on('mouseover', function() {
          if(inMove) return;
         d3.select(this).transition()
@@ -651,7 +651,7 @@ function bubbleClicked(index, toggle) {
     inMove = true;
     onHomeScreen = false;
 
-    // move the large bubble 
+    // move the large bubble
     mainBubble.transition()
          .duration(transitionTime)
          .attr('x', 2 * padding)
@@ -659,7 +659,7 @@ function bubbleClicked(index, toggle) {
          .attr('width', mainBubbleSmallSize)
          .attr('height', mainBubbleSmallSize);
 
-    // move the key medium bubble 
+    // move the key medium bubble
     mediumBubbles[selectedIndex].transition()
         .duration(transitionTime)
         .attr('cx', 3 * padding + 3 * mainBubbleSmallSize / 2)
@@ -693,12 +693,12 @@ function bubbleClicked(index, toggle) {
 
         x += padding + mediumBubbleSmallSize;
     }
-    
+
     // move the small bubbles
     var left = true; // put the bubble on left or right
     var height = padding;
     for (var i = 0; i < smallBubbles.length; i++) {
-        var x = left ? screenWidth - 2 * padding - 2 * smallBubbleSize : 
+        var x = left ? screenWidth - 2 * padding - 2 * smallBubbleSize :
                 screenWidth - padding - smallBubbleSize;
         var y = height;
         smallBubbles[i].transition()
@@ -771,7 +771,7 @@ var headlineGrowSize = 30;
 var headlineSizeSmall = 20;
 var headlineSizeTiny = 15;
 
-var mainBubbleSmallSize = 100; // when on a page 
+var mainBubbleSmallSize = 100; // when on a page
 var mediumBubbleSmallSize = 70; // when on page, not selected
 
 var bubbleGrowRatio = 1.05;
