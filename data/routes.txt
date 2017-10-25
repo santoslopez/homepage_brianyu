@@ -1,6 +1,6 @@
 # CS50
 /feedback http://www.courseboards.com/brian
-/section https://goo.gl/forms/OnMQpJ3ZSqM4NlZj2
+/section https://goo.gl/forms/1W6Q5Tu9UB55m90n2
 
 # Crimson
 /preschmooze https://docs.google.com/spreadsheets/d/1tRSECKXXHe4ZeErqydrDER50PnyLYxKmFFkoImHc12s/edit?usp=sharing
