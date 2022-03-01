@@ -2,4 +2,4 @@ Flask==1.0
 Flask-JSGlue==0.3.1
 Flask-SocketIO==2.9.2
 Jinja2==2.11.3
-Werkzeug==0.12.2
+Werkzeug==0.15.3
